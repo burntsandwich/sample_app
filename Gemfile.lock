@@ -199,7 +199,6 @@ DEPENDENCIES
   rspec-rails (= 2.10.0)
   sass-rails (~> 3.2.3)
   spork (= 0.9.0)
-  sprockets (~> 2.0)
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
   will_paginate (~> 3.0.4)
