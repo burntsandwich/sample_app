@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
+//= require jquery-migrate-min
 //= require bootstrap
+//= require jquery_ujs
 //= require_tree .
