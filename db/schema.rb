@@ -11,11 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130616111558) do
+ActiveRecord::Schema.define(:version => 20130616184646) do
+
+  create_table "query_generators", :force => true do |t|
+    t.integer  "search_id"
+    t.integer  "term_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "searches", :force => true do |t|
     t.string   "query"
     t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "terms", :force => true do |t|
+    t.string   "keyword"
+    t.float    "weight"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
