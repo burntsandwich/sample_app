@@ -1,6 +1,9 @@
 <li>
 	<span class="query"><%= search.query %></span>
-	<span class="timestamp"
-		Created <%= time_ago_in_words(search.create_at) %> ago.
+	<span class="timestamp">
+		Created <%= time_ago_in_words(search.created_at) %> ago.
 	</span>
+	<% if current_user?(search.user) %>
+		<%= link_to "delete", search, method: :delete, confirm: "Are you sure?", title: search.query %>
+	<% end %>
 </li>

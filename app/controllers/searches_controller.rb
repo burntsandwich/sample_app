@@ -1,7 +1,9 @@
 class SearchesController < ApplicationController
   before_filter :signed_in_user
+  before_filter :correct_user, only: :destroy
 
   def new
+  	@search = current_user.searches.build if signed_in?
   end
 
   def index
@@ -10,19 +12,24 @@ class SearchesController < ApplicationController
   	@response = solr.get 'select', params: {q: @query}
   end
 
-  def show
-  end
-  
   def create
-  	@search = current_user.microposts.build(params[:search])
+  	@search = current_user.searches.build(params[:search])
   	if @search.save
   		flash[:success] = "Search saved"
   		redirect_to root_path
 	else
-		render 'static_pages/home'
+		render 'new'
 	end
   end
 
   def destroy
+  	@search.destroy
+  	redirect_to(:back)
   end	
+
+  private
+  	def correct_user
+  		@search = current_user.searches.find_by_id(params[:id])
+  		redirect_to root_path if @search.nil?
+	end
 end
