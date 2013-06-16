@@ -5,4 +5,10 @@ FactoryGirl.define do
 		password "foobar"
 		password_confirmation "foobar"
 	end
+
+
+	factory :search do
+		content "piano"
+		user
+	end
 end

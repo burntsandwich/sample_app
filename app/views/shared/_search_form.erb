@@ -1,0 +1,6 @@
+<%= simple_form_for :query, { url: searches_path , method: 'get', html: {class: 'form-horizontal'}} do |f| %>
+	<%= f.error_notification %>
+	<%= f.input :q1_term, input_html: { class: "span8" }, label: 'Search term 1' %>
+	<%= f.input :q1_weight, input_html: { class: "span8" }, label: 'Weight on search term 1' %>
+	<%= f.button :submit %>
+<% end %>
