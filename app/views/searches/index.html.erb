@@ -1,12 +1,16 @@
-<% provide(:title, 'Search page') %>
-<h1>Results for search: '<%= @query %>'</h1>
+<% provide(:title, 'View queries') %>
+<h1>Saved queries</h1>
 
 <ul class="users">
-	<% @response["response"]["docs"].each do |doc| %>
+	<% @searches.each do |search| %>
 		<li>
-			<%= link_to(doc["title"], doc["baseUrl"])  %>
+			<h3>Search name: <%= search.query %></h3>
 			<br>
-			<%= doc["text"] %>
-		</li>
+			<% search.terms.each do |term| %>
+				<%= term.keyword %>
+				<%= term.weight %>
+				<br>
+			<% end %>
+		<li>
 	<% end %>
 </ul>

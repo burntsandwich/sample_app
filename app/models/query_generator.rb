@@ -1,6 +1,7 @@
 class QueryGenerator < ActiveRecord::Base
-  attr_accessible :search_id, :term_id
-
   belongs_to :term
   belongs_to :search
+
+  validates :search_id, presence: true
+  validates :term_id, presence: true 
 end
