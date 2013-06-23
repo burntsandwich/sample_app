@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: searches
+#
+#  id         :integer         not null, primary key
+#  query      :string(255)
+#  user_id    :integer
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#  name       :string(255)
+#
+
 require 'spec_helper'
 
 describe Search do

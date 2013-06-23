@@ -7,7 +7,7 @@
 			</h1>
 		</section>
 	</aside>
-	<div class="span8">
+	<div class="span4">
 		<% if @user.searches.any? %>
 			<h3>Searches (<%= @user.searches.count %>)</h3>
 			<ol class="searches"
@@ -15,4 +15,10 @@
 			</ol>
 		<% end %>
 	</div>
+	<div class="span4 offset4">
+		<br>
+		<h3>Create new search</h3>
+		<%= render 'shared/search_form' %>
+	</div>
+
 </div>

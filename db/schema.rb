@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130616184646) do
+ActiveRecord::Schema.define(:version => 20130623113251) do
 
   create_table "query_generators", :force => true do |t|
     t.integer  "search_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130616184646) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   create_table "terms", :force => true do |t|
