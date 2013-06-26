@@ -11,10 +11,11 @@
 #
 
 class Search < ActiveRecord::Base
-  attr_accessible :query, :name
+  attr_accessible :query, :name, :terms_attributes
   belongs_to :user
   has_many :query_generators
   has_many :terms, :through => :query_generators
+  accepts_nested_attributes_for :terms, allow_destroy: true
 
   validates :user_id, presence: true
   validates :query, presence: true

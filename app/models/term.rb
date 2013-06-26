@@ -17,4 +17,5 @@ class Term < ActiveRecord::Base
 
   validates :keyword, presence: true, length: {minimum:3}
   validates :weight, presence: true
+
 end
