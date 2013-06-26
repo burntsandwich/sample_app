@@ -25,10 +25,9 @@ class SearchesController < ApplicationController
 
   def update
     if @search.update_attributes(params[:search])
-      @keyweight = []
-      @search.terms.each {|a| @keyweight.push(a.keyword + "^" + a.weight.to_s)}
-      #Remove and [, ] or " characters and update the search field
-      @search.update_attribute(:query, @keyweight.to_s.gsub(/(\[|\])/, '').delete('"'))
+      terms_to_query!(@search.terms)
+      query_cleaner!(@query_build)
+      @search.update_attribute(:query, @clean_query)
       flash[:success] = "Search updated"
       redirect_to(:back)
     else
@@ -46,4 +45,6 @@ class SearchesController < ApplicationController
   		@search = current_user.searches.find_by_id(params[:id])
   		redirect_to root_path if @search.nil?
 	   end
+
+
 end
