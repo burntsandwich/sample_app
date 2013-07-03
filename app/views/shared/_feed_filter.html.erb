@@ -1,0 +1,6 @@
+<div class="btn-group">
+	<%= link_to "Today", set_feed_timescope_path(timescope: "NOW-1DAY"), class: "btn" %>
+	<%= link_to "Last two days", set_feed_timescope_path(timescope: "NOW-2DAYS"), class: "btn" %>
+	<%= link_to "Last week", set_feed_timescope_path(timescope: "NOW-7DAYS"), class: "btn" %>
+	<%= link_to "All of time", set_feed_timescope_path(timescope: "NOW-5YEARS"), class: "btn" %>
+</div>

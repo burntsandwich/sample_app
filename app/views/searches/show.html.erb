@@ -1,0 +1,12 @@
+<% provide(:title, 'Search page') %>
+<h1>Results for search: '<%= @query %>'</h1>
+
+<ul class="users">
+	<% @response["response"]["docs"].each do |doc| %>
+		<li>
+			<%= link_to(doc["title"], doc["baseUrl"])  %>
+			<br>
+			<%= doc["text"] %>
+		</li>
+	<% end %>
+</ul>

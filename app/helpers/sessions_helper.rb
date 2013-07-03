@@ -41,4 +41,18 @@ module SessionsHelper
 	def store_location
 		session[:return_to] = request.fullpath
 	end
+
+  	def set_feed_timescope
+  	  if params[:timescope]	
+	  	session[:feed_timescope] = params[:timescope] 
+	    redirect_back_or(root_path)
+	  elsif session[:feed_timescope].nil?
+	  	session[:feed_timescope] = "NOW-1DAY"
+	  end
+  	end
+
+  	def default_feed_timescope
+  		session[:feed_timescope] = "NOW-1DAY"
+	end
+
 end

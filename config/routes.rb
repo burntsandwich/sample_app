@@ -12,6 +12,7 @@ SampleApp::Application.routes.draw do
   match "/signin", to: "sessions#new"
   match "/signout", to: "sessions#destroy", via: :delete
   match "/search_builder", to: "searches#new"
+  match "set_feed_timescope", to: "static_pages#set_feed_timescope"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

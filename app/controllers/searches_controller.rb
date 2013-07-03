@@ -3,17 +3,10 @@ class SearchesController < ApplicationController
   before_filter :signed_in_user
   before_filter :correct_user, only: [:destroy, :edit, :update]
 
-  def index
-    @searches = current_user.searches
-#	@query = "#{params[:query][:q1_term]}^#{params[:query][:q1_weight]}"
-#  	solr = RSolr.connect url: 'http://localhost:8080/solr/TuneFeeder'
-#  	@response = solr.get 'select', params: {q: @query}
-  end
-
   def create
     @search = current_user.searches.build(params[:search])
     if @search.save
-      flash[:success] = "Search created!"
+      flash[:success] = "Search created"
       redirect_to(:back)
     else
       redirect_to(:back)
@@ -25,8 +18,8 @@ class SearchesController < ApplicationController
 
   def update
     if @search.update_attributes(params[:search])
-      terms_to_query!(@search.terms)
-      query_cleaner!(@query_build)
+      terms_to_query(@search.terms)
+      query_cleaner(@query_build)
       @search.update_attribute(:query, @clean_query)
       flash[:success] = "Search updated"
       redirect_to(:back)
