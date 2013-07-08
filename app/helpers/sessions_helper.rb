@@ -43,16 +43,24 @@ module SessionsHelper
 	end
 
   	def set_feed_timescope
-  	  if params[:timescope]	
-	  	session[:feed_timescope] = params[:timescope] 
+  	  if params[:feed_timescope]	
+	  	session[:feed_timescope] = params[:feed_timescope] 
 	    redirect_back_or(root_path)
 	  elsif session[:feed_timescope].nil?
 	  	session[:feed_timescope] = "NOW-1DAY"
 	  end
   	end
 
-  	def default_feed_timescope
-  		session[:feed_timescope] = "NOW-1DAY"
-	end
+  	def set_feed_query
+  		if params[:feed_query]
+  			session[:feed_query] = params[:feed_query]
+  			redirect_back_or(root_path)
+		elsif session[:feed_query].nil?
+			if current_user.searches.count > 0
+				session[:feed_query] = current_user.searches.first.query
+			else session[:feed_query] = "no search defined"
+			end
+		end
+  	end
 
 end

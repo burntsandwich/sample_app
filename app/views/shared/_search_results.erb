@@ -1,11 +1,18 @@
-<h1>Results for search:</h1>
-<h3><%= @query %></h3>
-<ul class="users">
-	<% @response["response"]["docs"].each do |doc| %>
-		<li>
-			<%= link_to(doc["title"], doc["baseUrl"])  %>
-			<br>
-			<%= doc["text"] %>
-		</li>
-	<% end %>
-</ul>
+<% if @bang.nil? %>
+	<h1>Results for search:</h1>
+	<h3><%= @query %></h3>
+	<ul class="users">
+		<% @response["response"]["docs"].each do |doc| %>
+			<li>
+				<%= link_to(doc["title"], doc["baseUrl"])  %>
+				<br>
+				<%= doc["text"] %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<h1>Search failed</h1>
+	<h3>
+		<% @bang.to_yaml if Rails.env.development? %>
+	</h3>
+<% end %>

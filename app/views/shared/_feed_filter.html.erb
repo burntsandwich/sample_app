@@ -1,6 +1,11 @@
 <div class="btn-group">
-	<%= link_to "Today", set_feed_timescope_path(timescope: "NOW-1DAY"), class: "btn" %>
-	<%= link_to "Last two days", set_feed_timescope_path(timescope: "NOW-2DAYS"), class: "btn" %>
-	<%= link_to "Last week", set_feed_timescope_path(timescope: "NOW-7DAYS"), class: "btn" %>
-	<%= link_to "All of time", set_feed_timescope_path(timescope: "NOW-5YEARS"), class: "btn" %>
+	<%= link_to "Today", set_feed_timescope_path(feed_timescope: "NOW-1DAY"), class: "btn" %>
+	<%= link_to "Last two days", set_feed_timescope_path(feed_timescope: "NOW-2DAYS"), class: "btn" %>
+	<%= link_to "Last week", set_feed_timescope_path(feed_timescope: "NOW-7DAYS"), class: "btn" %>
+	<%= link_to "All of time", set_feed_timescope_path(feed_timescope: "NOW-5YEARS"), class: "btn" %>
+</div>
+<div class="btn-group">
+	<% current_user.searches.each do |s| %>
+		<%= link_to "#{s.name}", set_feed_query_path(feed_query: s.query), class: "btn" %>
+	<% end %>
 </div>
