@@ -17,6 +17,8 @@ module SessionsHelper
 		@current_user ||= User.find_by_remember_token(cookies[:remember_token])
 	end
 
+	#Methods for handling users
+
 	def current_user?(user)
 		user == current_user
 	end
@@ -31,6 +33,7 @@ module SessionsHelper
 	def sign_out
 		self.current_user = nil
 		cookies.delete(:remember_token)
+		reset_session
 	end
 
 	def redirect_back_or(default)
@@ -42,25 +45,31 @@ module SessionsHelper
 		session[:return_to] = request.fullpath
 	end
 
+	#Methods for handling home feed
+
+  	def set_feed_timescope_default
+  		session[:feed_timescope] = "NOW-1DAY" if session[:feed_timescope].blank?
+	end
+
   	def set_feed_timescope
-  	  if params[:feed_timescope]	
-	  	session[:feed_timescope] = params[:feed_timescope] 
-	    redirect_back_or(root_path)
-	  elsif session[:feed_timescope].nil?
-	  	session[:feed_timescope] = "NOW-1DAY"
-	  end
+  		if signed_in?
+	 	 	session[:feed_timescope] = params[:feed_timescope] 
+	  	    redirect_back_or(root_path)
+  	 	end
   	end
 
-  	def set_feed_query
-  		if params[:feed_query]
-  			session[:feed_query] = params[:feed_query]
-  			redirect_back_or(root_path)
-		elsif session[:feed_query].nil?
-			if current_user.searches.count > 0
-				session[:feed_query] = current_user.searches.first.query
-			else session[:feed_query] = "no search defined"
+  	def set_feed_query_default
+  		if signed_in? && session[:feed_query].blank?
+  			if current_user.searches.blank?
+  				session[:feed_query] = "*:*"
+			else session[:feed_query] = current_user.searches.first
 			end
 		end
+	end
+
+  	def set_feed_query
+		session[:feed_query] = params[:feed_query]
+		redirect_back_or(root_path)
   	end
 
 end

@@ -1,19 +1,12 @@
-<% provide(:title, 'Edit search') %>
-<h1>Update your search</h1>
+<% provide(:title, 'Search page') %>
+<h1>Results for search: '<%= @query %>'</h1>
 
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_for(@search) do |f| %>
-
-			<%= render 'shared/error_messages', object: f.object %>
-
-			<%= f.label :name %>
-			<%= f.text_field :name %>
-
-			<%= f.label :query %>
-			<%= f.text_field :query %>
-
-			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-		<% end %>
-	</div>
-</div>
+<ul class="users">
+	<% @response["response"]["docs"].each do |doc| %>
+		<li>
+			<%= link_to(doc["title"], doc["baseUrl"])  %>
+			<br>
+			<%= doc["text"] %>
+		</li>
+	<% end %>
+</ul>

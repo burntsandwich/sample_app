@@ -1,15 +1,12 @@
 class StaticPagesController < ApplicationController
+  before_filter :set_feed_timescope_default, only: :home
+  before_filter :set_feed_query_default, only: :home
+
   def home
   	if signed_in?
-  		#Need to implement catch for users with no saved searches.
-  		set_feed_timescope
-  		set_feed_query
   		@query = "(#{session[:feed_query]}) AND LastMod:[#{session[:feed_timescope]} TO NOW]"
   		solr = RSolr.connect url: 'http://localhost:8080/solr/TuneFeeder'
-  		begin
-  			@response = solr.get 'select', params: {q: @query}
-		rescue StandardError => @bang
-		end	
+		@response = solr.get 'select', params: {q: @query}
 	end
   end
 
