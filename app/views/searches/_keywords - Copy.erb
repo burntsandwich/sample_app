@@ -1,0 +1,14 @@
+<% if @bang.nil? %>
+	<ul class="users">
+		<% @response["facet_counts"]["facet_fields"]["ftext"].each do |keyword, value| %>
+			<li>
+				<%= puts "#{keyword} - #{value}" %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<h1>Search failed</h1>
+	<h3>
+		<% @bang.to_yaml if Rails.env.development? %>
+	</h3>
+<% end %>

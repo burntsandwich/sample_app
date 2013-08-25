@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def show
-	@user = User.find(params[:id])
 	@searches = @user.searches
 	@search = current_user.searches.build
 	end

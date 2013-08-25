@@ -1,0 +1,17 @@
+<% if @bang.nil? %>
+	<ul class="users">
+		<%= debug @response %>
+		<% @response.facets.each do |facet| %>
+			<% facet.items.each do |item| %>
+			<li>
+				<%= item.value %>
+			</li>
+			<% end %>
+		<% end %>
+	</ul>
+<% else %>
+	<h1>Search failed</h1>
+	<h3>
+		<% @bang.to_yaml if Rails.env.development? %>
+	</h3>
+<% end %>

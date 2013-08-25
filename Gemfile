@@ -8,6 +8,7 @@ gem 'will_paginate', '~>3.0.4'
 gem 'sprockets', '~>2.0'
 gem 'jquery-migrate-rails'
 gem 'rsolr'
+gem 'rsolr-ext'
 gem 'simple_form', '~>2.0'
 
 group :development do

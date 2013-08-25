@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
 
   before_filter :signed_in_user
-  before_filter :correct_user, only: [:destroy, :edit, :update]
+  before_filter :correct_search, only: [:destroy, :edit, :update]
 
   def create
     @search = current_user.searches.build(params[:search])
@@ -14,6 +14,9 @@ class SearchesController < ApplicationController
   end
 
   def edit
+    solr = RSolr::Ext.connect url: 'http://localhost:8080/solr/TuneFeeder'
+    solrparams = {queries: '*:*', rows: 0, facets: {fields: 'ftext'} }
+    @response = solr.find solrparams
   end
 
   def update
@@ -34,7 +37,7 @@ class SearchesController < ApplicationController
   end	
 
   private
-  	def correct_user
+  	def correct_search
   		@search = current_user.searches.find_by_id(params[:id])
   		redirect_to root_path if @search.nil?
 	   end

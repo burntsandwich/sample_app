@@ -1,15 +1,15 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, current_user.name) %>
 <div class="row">
 	<aside class="span4">
 		<section>
 			<h1>
-				<%= @user.name %>
+				<%= @current_user.name %>
 			</h1>
 		</section>
 	</aside>
 	<div class="span4">
-		<% if @user.searches.any? %>
-			<h3>Searches (<%= @user.searches.count %>)</h3>
+		<% if @current_user.searches.any? %>
+			<h3>Searches (<%= @current_user.searches.count %>)</h3>
 			<ol class="searches"
 				<%= render @searches %>
 			</ol>
