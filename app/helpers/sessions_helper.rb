@@ -62,7 +62,7 @@ module SessionsHelper
   		if signed_in? && session[:feed_query].blank?
   			if current_user.searches.blank?
   				session[:feed_query] = "*:*"
-			else session[:feed_query] = current_user.searches.first
+			else session[:feed_query] = current_user.searches.first.query
 			end
 		end
 	end
