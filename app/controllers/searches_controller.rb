@@ -17,6 +17,7 @@ class SearchesController < ApplicationController
     solr = RSolr::Ext.connect url: 'http://localhost:8080/solr/TuneFeeder'
     solrparams = {queries: '*:*', rows: 0, facets: {fields: 'ftext'} }
     @response = solr.find solrparams
+    @stopwords = File.read("#{Rails.root}/config/stopwords_additionalforrails.txt")
   end
 
   def update
