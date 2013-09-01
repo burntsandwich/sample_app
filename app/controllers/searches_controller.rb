@@ -17,7 +17,10 @@ class SearchesController < ApplicationController
     solr = RSolr::Ext.connect url: 'http://localhost:8080/solr/TuneFeeder'
     solrparams = {queries: '*:*', rows: 0, facets: {fields: 'ftext'} }
     @response = solr.find solrparams
-    @stopwords = File.read("#{Rails.root}/config/stopwords_additionalforrails.txt")
+    @stopwords = []
+    File.open("#{Rails.root}/config/stopwords_additionalforrails.txt").each do |line|
+      @stopwords << line.strip
+    end
   end
 
   def update
@@ -42,6 +45,5 @@ class SearchesController < ApplicationController
   		@search = current_user.searches.find_by_id(params[:id])
   		redirect_to root_path if @search.nil?
 	   end
-
 
 end

@@ -1,14 +1,14 @@
 <% if @bang.nil? %>
 	<ul class="unstyled">
-		<%= @stopwords %>
 		<% @response.facets.each do |facet| %>
 			<% facet.items.each do |item| %>
-			<li>
-				<%= item.value %>
+				<%= item.value unless @stopwords.include?("#{item.value.to_s.gsub(/\W/, "")}") %>
+				<li>
 			<% end %>
 			</li>
 		<% end %>
 	</ul>
+	<%= debug @response %>
 <% else %>
 	<h1>Search failed</h1>
 	<h3>
