@@ -67,9 +67,14 @@ module SessionsHelper
 		end
 	end
 
-  	def set_feed_query
-		session[:feed_query] = params[:feed_query]
+  	def set_feed_search
+		session[:feed_search] = params[:feed_search]
+		set_feed_query
 		redirect_back_or(root_path)
+  	end
+
+  	def set_feed_query
+  		session[:feed_query] = Search.find_by_id(session[:feed_search]).query
   	end
 
 end

@@ -1,5 +1,5 @@
 <% if @bang.nil? %>
-	<h1>Results for search:</h1>
+	<h1>Results for search: <%= Search.find_by_id(session[:feed_search]).name %> </h1>
 	<h3><%= @query %></h3>
 	<ul class="users">
 		<% @response["response"]["docs"].each do |doc| %>

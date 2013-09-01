@@ -6,6 +6,6 @@
 </div>
 <div class="btn-group">
 	<% current_user.searches.each do |s| %>
-		<%= link_to "#{s.name}", set_feed_query_path(feed_query: s.query), class: "btn" %>
+		<%= link_to "#{s.name}", set_feed_search_path(feed_search: s), class: "btn" %>
 	<% end %>
 </div>
