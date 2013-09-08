@@ -58,11 +58,13 @@ module SessionsHelper
   	 	end
   	end
 
-  	def set_feed_query_default
-  		if signed_in? && session[:feed_query].blank?
+  	def set_feed_search_default
+  		if signed_in? && session[:feed_search].blank?
   			if current_user.searches.blank?
-  				session[:feed_query] = "*:*"
-			else session[:feed_query] = current_user.searches.first.query
+  				session[:feed_search] = "*:*"
+			else 
+				session[:feed_search] = current_user.searches.first.id
+				set_feed_query
 			end
 		end
 	end

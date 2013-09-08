@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   before_filter :set_feed_timescope_default, only: :home
-  before_filter :set_feed_query_default, only: :home
+  before_filter :set_feed_search_default, only: :home
 
   def home
   	if signed_in?
