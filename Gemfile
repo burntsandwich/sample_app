@@ -10,6 +10,7 @@ gem 'rsolr'
 gem 'rsolr-ext'
 gem 'simple_form', '~>2.0'
 gem 'bootstrap-will_paginate'
+gem 'autolog'
 
 group :development do
 	gem 'sqlite3', '1.3.5'
