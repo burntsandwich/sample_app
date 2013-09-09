@@ -1,14 +1,20 @@
 
 
 // Accent colors
+// -------------------------
 $yellow:                #ffc700 !default;
 $orange:                #f58330 !default;
 $turquoise: 			#44f4ff;
 $deepred:				#850303;
 $white:                 #fff !default;
 
+// Links
+// -------------------------
+$linkColor:             $deepred;
+
 
 // Navbar
+// -------------------------
 $navbarHeight:                    40px !default;
 $navbarBackground:                $deepred !default;
 $navbarBackgroundHighlight:       $deepred !default;
@@ -16,6 +22,12 @@ $navbarBackgroundHighlight:       $deepred !default;
 $navbarText:                      $white !default;
 $navbarLinkColor:                 $white !default;
 $navbarLinkColorHover:            darken($white, 10%) !default;
+
+// Pagination
+// -------------------------
+$paginationBackground:                lighten($yellow, 15%) !default;
+$paginationBorder:                    $white !default;
+$paginationActiveBackground:          $yellow !default;
 
 @import "bootstrap/variables";
 

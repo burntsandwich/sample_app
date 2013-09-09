@@ -1,6 +1,7 @@
 @import "bootstrap/variables";
 @import "variables_custom";
 @import "bootstrap/mixins";
+@import "bootstrap/type";
 
 /* typography */
 
@@ -17,18 +18,25 @@ h1 {
 }
 
 h2 {
-	font-size: 1.3em;
-	letter-spacing: -1px;
-	margin-top: 5px;
+	font-size: 1.5em;
+	letter-spacing: 0px;
+	margin-top: 15px;
 	margin-bottom: 5px;
 	text-align: left;
-	font-weight: normal;
+	font-weight: bold;
 	color: $grayDark;
 }
 
 p {
 font-size: 1.1em;
 line-height: 1.7em;
+}
+
+.feed-title-text {
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .page-header {
@@ -41,5 +49,10 @@ line-height: 1.7em;
   line-height: 1;
 }
 
+/* pagination */
 
-@import "bootstrap/type";
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  color: $deepred;
+  font-weight: bold;
+}

@@ -87,8 +87,7 @@ aside {
 	}
 }
 
-/* Sidenav for Docs
--------------------------------------------------- */
+/* Sidenav for Docs */
 
 .bs-docs-sidenav {
   width: 228px;
@@ -129,24 +128,7 @@ aside {
      -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
           box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
 }
-/* Chevrons */
-.bs-docs-sidenav .icon-chevron-right {
-  float: right;
-  margin-top: 2px;
-  margin-right: -6px;
-  opacity: .25;
-}
-.bs-docs-sidenav > li > a:hover {
-  background-color: #f5f5f5;
-}
-.bs-docs-sidenav a:hover .icon-chevron-right {
-  opacity: .5;
-}
-.bs-docs-sidenav .active .icon-chevron-right,
-.bs-docs-sidenav .active a:hover .icon-chevron-right {
-  background-image: url(../img/glyphicons-halflings-white.png);
-  opacity: 1;
-}
+
 .bs-docs-sidenav.affix {
   top: 40px;
 }
@@ -158,4 +140,13 @@ aside {
 
 .affix {
   position: fixed;
+}
+
+/* Block graphics */
+
+.feed-title-row {
+  background-color: $yellow;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 10px
 }

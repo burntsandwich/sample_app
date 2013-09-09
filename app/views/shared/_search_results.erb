@@ -1,17 +1,14 @@
 <% if @bang.nil? %>
-	<p><%= @query %></p>
-	<p><%= will_paginate @response["response"]["docs"] %></p>
-		<ul class="users">
+	<%= will_paginate @response["response"]["docs"], class: 'pagination pagination-centered' %>
 			<% @response["response"]["docs"].each do |doc| %>
-				<li>
-					<%= link_to(doc["title"], doc["baseUrl"])  %>
-					<br>
-					<% @text = @response["highlighting"][doc["baseUrl"]]["text"].first %>
-					<%= @text.html_safe %>
-				</li>
+				<div class="feed-title-row">
+					<p class="feed-title-text"><%= link_to(doc["title"].upcase, doc["baseUrl"])  %></p>
+				</div>
+				<% @text = @response["highlighting"][doc["baseUrl"]]["text"].first %>
+				<%= @text.html_safe %>
 			<% end %>
-		</ul>
-	<p><%= will_paginate @response["response"]["docs"] %></p>
+	<%= will_paginate @response["response"]["docs"], class: 'pagination pagination-centered' %>
+	<p class="muted"><%= @query %></p>
 <% else %>
 	<h1>Search failed</h1>
 	<h3>
