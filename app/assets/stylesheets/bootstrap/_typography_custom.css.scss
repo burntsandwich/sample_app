@@ -1,6 +1,6 @@
+@import "bootstrap/variables";
 @import "variables_custom";
 @import "bootstrap/mixins";
-@import "bootstrap/type";
 
 /* typography */
 
@@ -11,17 +11,19 @@ line-height: 1;
 h1 {
 	font-size: 5em;
 	letter-spacing: -2px;
-	margin-bottom: 30px;
+	margin-bottom: 5px;
 	text-align: left;
+	line-height: $baseLineHeight;
 }
 
 h2 {
-	font-size: 1.7em;
+	font-size: 1.3em;
 	letter-spacing: -1px;
-	margin-bottom: 30px;
-	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: left;
 	font-weight: normal;
-	color: $grayLight;
+	color: $grayDark;
 }
 
 p {
@@ -29,3 +31,15 @@ font-size: 1.1em;
 line-height: 1.7em;
 }
 
+.page-header {
+  padding-bottom: 0;
+  margin: 20;
+  border-bottom: 4px solid $deepred;
+}
+
+.page-header h1 {
+  line-height: 1;
+}
+
+
+@import "bootstrap/type";

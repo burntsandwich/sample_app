@@ -33,7 +33,8 @@ GEM
     autolog (0.3.0)
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
-    bootstrap-sass (2.0.0)
+    bootstrap-sass (2.3.2.0)
+      sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
       will_paginate
     builder (3.0.4)
@@ -207,7 +208,7 @@ DEPENDENCIES
   annotate (~> 2.4.1.beta)
   autolog
   bcrypt-ruby (= 3.0.1)
-  bootstrap-sass (= 2.0.0)
+  bootstrap-sass (= 2.3.2.0)
   bootstrap-will_paginate
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.1)

@@ -1,17 +1,16 @@
 <% if @bang.nil? %>
-	<h1>Results for search: <%= Search.find_by_id(session[:feed_search]).name %> </h1>
 	<p><%= @query %></p>
 	<p><%= will_paginate @response["response"]["docs"] %></p>
-	<ul class="users">
-		<% @response["response"]["docs"].each do |doc| %>
-			<li>
-				<%= link_to(doc["title"], doc["baseUrl"])  %>
-				<br>
-				<% @text = @response["highlighting"][doc["baseUrl"]]["text"].first %>
-				<%= @text.html_safe %>
-			</li>
-		<% end %>
-	</ul>
+		<ul class="users">
+			<% @response["response"]["docs"].each do |doc| %>
+				<li>
+					<%= link_to(doc["title"], doc["baseUrl"])  %>
+					<br>
+					<% @text = @response["highlighting"][doc["baseUrl"]]["text"].first %>
+					<%= @text.html_safe %>
+				</li>
+			<% end %>
+		</ul>
 	<p><%= will_paginate @response["response"]["docs"] %></p>
 <% else %>
 	<h1>Search failed</h1>

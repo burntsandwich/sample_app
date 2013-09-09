@@ -1,12 +1,15 @@
-<div class="btn-group">
-	<% current_user.searches.each do |s| %>
-		<%= link_to "#{s.name}", set_feed_search_path(feed_search: s), class: "btn" %>
-	<% end %>
-</div>
-<div class="btn-group">
-	<%= link_to "Today", set_feed_timescope_path(feed_timescope: "NOW-1DAY"), class: "btn" %>
-	<%= link_to "Last two days", set_feed_timescope_path(feed_timescope: "NOW-2DAYS"), class: "btn" %>
-	<%= link_to "Last week", set_feed_timescope_path(feed_timescope: "NOW-7DAYS"), class: "btn" %>
-	<%= link_to "All of time", set_feed_timescope_path(feed_timescope: "NOW-5YEARS"), class: "btn" %>
-</div>
-
+	<div class='span3 bs-docs-sidebar'>
+		<div class="nav nav-list bs-docs-sidenav affix">
+			<h2>Searches:</h2>
+			<% current_user.searches.each do |s| %>
+				<li>
+				<%= link_to "<i class='icon-chevron-right'></i>#{s.name}".html_safe, set_feed_search_path(feed_search: s) %>
+				</li>
+			<% end %>
+			<h2>Time period:</h2>
+			<li><%= link_to "<i class='icon-chevron-right'></i>Today".html_safe, set_feed_timescope_path(feed_timescope: "NOW-1DAY") %></li>
+			<li><%= link_to "<i class='icon-chevron-right'></i>Last two days".html_safe, set_feed_timescope_path(feed_timescope: "NOW-2DAYS") %></li>
+			<li><%= link_to "<i class='icon-chevron-right'></i>Last week".html_safe, set_feed_timescope_path(feed_timescope: "NOW-7DAYS") %></li>
+			<li><%= link_to "<i class='icon-chevron-right'></i>All of time".html_safe, set_feed_timescope_path(feed_timescope: "NOW-5YEARS")%></li>
+		</div>
+	</div>

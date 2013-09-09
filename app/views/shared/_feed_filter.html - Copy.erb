@@ -1,0 +1,17 @@
+
+	<div class="span3 bs-docs-sidebar">
+		<ul class="nav nav-list bs-docs-sidenav">
+			<% current_user.searches.each do |s| %>
+				<li>
+				<%= link_to "#{s.name}", set_feed_search_path(feed_search: s), class: "icon-chevron-right" %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="btn-group">
+		<%= link_to "Today", set_feed_timescope_path(feed_timescope: "NOW-1DAY"), class: "btn" %>
+		<%= link_to "Last two days", set_feed_timescope_path(feed_timescope: "NOW-2DAYS"), class: "btn" %>
+		<%= link_to "Last week", set_feed_timescope_path(feed_timescope: "NOW-7DAYS"), class: "btn" %>
+		<%= link_to "All of time", set_feed_timescope_path(feed_timescope: "NOW-5YEARS"), class: "btn" %>
+	</div>
+
