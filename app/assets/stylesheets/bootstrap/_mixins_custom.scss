@@ -1,0 +1,12 @@
+@import "variables_custom";
+@import "bootstrap/mixins";
+
+/* mixins */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+	-most-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}

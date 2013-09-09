@@ -12,6 +12,7 @@
 			</li>
 		<% end %>
 	</ul>
+	<p><%= will_paginate @response["response"]["docs"] %></p>
 <% else %>
 	<h1>Search failed</h1>
 	<h3>

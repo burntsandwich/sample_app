@@ -1,0 +1,83 @@
+@import "variables_custom";
+@import "bootstrap/mixins";
+@import "mixins_custom";
+
+
+/* universal */
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	padding-top: 60px;
+}
+
+section {
+	overflow: auto;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.center {
+	text-align: center;
+	h1 {
+		margin-bottom: 10px
+	}
+}
+
+
+/*miscellaneous */
+
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
+}
+
+
+/* users index */
+
+.users {
+	list-style: none;
+	margin: 0;
+	li {
+		overflow: auto;
+		padding: 10px 0;
+		border-top: 1px solid $grayLighter;
+		&:last-child {
+			border-bottom: 1px solid $grayLighter;
+		}
+	}
+}
+
+/* queries */
+
+.searches {
+	list-style:none;
+	margin: 10px 0 0 0;
+
+	li {
+		padding: 10px 0;
+		border-top: 1px solid #e8e8e8;
+	}
+}
+
+.query {
+	display: block;
+}
+
+.timestamp {
+	color: $grayLight;
+}
+
+aside {
+	textarea {
+		height: 100px;
+		margin-bottom: 5px;
+	}
+}
