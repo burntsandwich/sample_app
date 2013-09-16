@@ -14,4 +14,30 @@
 //= require jquery-migrate-min
 //= require bootstrap
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require_tree .
+
+$(document).ready(function() {
+	$('div.nav li').on('click', function() {
+		$(this).addClass('active');
+		});
+	});
+
+$(document).ready(function() {
+	$('#date').datepicker();
+})
+
+  $(function() {
+	$( "#keywords p" ).draggable();
+	$( "#droppable" ).droppable({
+		activeClass: "ui-state-default",
+		hoverClass: "ui-state-hover",
+		drop: function( event, ui ) {
+			$( this ).find( ".placeholder" ).remove();
+			$( "<li></li>" ).text( ui.draggable.text())
+				.addClass("keyword-selected")
+				.appendTo( this );
+			$(ui.draggable).remove();
+		}
+	});
+});

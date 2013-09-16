@@ -10,4 +10,8 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery.ui.all
  */
+
+#draggable { width: 150px; height: 150px; padding: 0.5em; }
+
