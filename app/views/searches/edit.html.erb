@@ -11,7 +11,7 @@
 		<h5>Keywords in search</h5>
 		<ul id="sortable1" class="connectedSortable">
 			<% @search.terms.each do |term| %>
-				<li class='ui-state-default'><%= term.keyword.capitalize %></li>
+				<%= "<li class='ui-state-default'>#{term.keyword.capitalize}</li>".html_safe unless term.keyword[0]=="-" %>
 			<% end %>
 		</ul>
 	</div>
@@ -28,7 +28,10 @@
 	<div class="span3">		
 		<h5>Blacklisted keywords</h5>
 		<ul id="sortable3" class="connectedSortable">
-			<li class="ui-state-default">Drop here</li>
+			<% @search.terms.each do |term| %>
+				<% clean_keyword = term.keyword.slice(0) %>
+				<%= "<li class='ui-state-default'>#{term.keyword[1..-1].capitalize}</li>".html_safe if term.keyword[0]=="-" %>
+			<% end %>
 		</ul>
 	</div>	
 </div>
