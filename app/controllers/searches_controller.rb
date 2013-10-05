@@ -63,6 +63,7 @@ class SearchesController < ApplicationController
     #Update terms db with new 'green' terms
     terms_in = JSON.parse(params[:keywords_in_to_db])
     terms_blacklist = JSON.parse(params[:keywords_blacklist_to_db])
+    terms_out = JSON.parse(params[:keywords_bin_to_db])
 
     terms_in.each do |x|
       Term.where(search_id: @search, keyword: x).first_or_create(weight: 1)
@@ -74,8 +75,11 @@ class SearchesController < ApplicationController
     end
 
     #Remove any terms from db that have been dragged out
-
-    
+    terms_out.each do |x|
+      if Term.exists?(x) 
+        Term.find_by_id(x).destroy
+      end
+    end
     render :nothing => true
   end
 

@@ -11,6 +11,7 @@ jQuery ->
 	$('#search_edit_save').on 'click', (event) ->
 		keywords_in_new = new Array();
 		keywords_blacklist_new = new Array()
+		keywords_bin_new = new Array()
 
 		#Find keywords that have been dragged into the 'keywords-in' block
 		$('#keywords_in').find('.keyword-available, .keyword-blacklisted').each ->
@@ -24,13 +25,15 @@ jQuery ->
 			keywords_blacklist_new.push(term)
 		keywords_blacklist_to_db = JSON.stringify(keywords_blacklist_new)
 
-		#Find keywords that have been dragged into the 'keywords-available' block
-		$('#keywords_available').find('.keyword-in, .keyword-blacklisted').each ->
-			#Need to fetch IDs and delete from model
+		#Find keywords that have been dragged into the 'keywords-bin' block
+		$('#keywords_bin').children().each ->
+			term = $(this).attr('id')
+			keywords_bin_new.push(term)
+		keywords_bin_to_db = JSON.stringify(keywords_bin_new)
 
 		$.ajax
 			url: "update_j"
 			type: "PUT"
-			data: {keywords_in_to_db: keywords_in_to_db, keywords_blacklist_to_db: keywords_blacklist_to_db}
+			data: {keywords_in_to_db: keywords_in_to_db, keywords_blacklist_to_db: keywords_blacklist_to_db, keywords_bin_to_db: keywords_bin_to_db}
 		
-		alert(keywords_in_to_db)
+		alert('Db updated')

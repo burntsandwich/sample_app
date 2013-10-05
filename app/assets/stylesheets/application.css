@@ -14,7 +14,7 @@
  */
 
 #draggable { width: 150px; height: 150px; padding: 0.5em; }
- #keywords_in, #keywords_available, #keywords_blacklist { 
+ #keywords_in, #keywords_available, #keywords_blacklist, #keywords_bin { 
  	list-style-type: none; 
  	margin: 0; 
  	float: left; 
@@ -22,5 +22,5 @@
  	background: #eee; 
  	padding: 5px; 
  	width: 170px;}
-#keywords_in li, #keywords_available li, #keywords_blacklist li { margin: 5px; padding: 5px; font-size: 1.0em; width: 150px; }
+#keywords_in li, #keywords_available li, #keywords_blacklist li, #keywords_bin li { margin: 5px; padding: 5px; font-size: 1.0em; width: 150px; }
 
