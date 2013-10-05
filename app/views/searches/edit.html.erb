@@ -4,12 +4,13 @@
 		<h1>Update your search</h1>
 	</div>
 	<h3>Search: <%= @search.name %></h3>
+	<button id="search_edit_save" class="btn btn-primary btn-block">Update search</button>
 </div>
 
 <div class="row">
 	<div class="span3">
 		<h5>Keywords in search</h5>
-		<ul id="sortable1" class="connectedSortable">
+		<ul id="keywords_in" class="connectedSortable">
 			<% @search.terms.each do |term| %>
 				<%= "<li id='#{term.id}' class='ui-state-default'>#{term.keyword.capitalize}</li>".html_safe unless term.keyword[0]=="-" %>
 			<% end %>
@@ -17,7 +18,7 @@
 	</div>
 	<div class="span3">
 		<h5>Available keywords</h5>
-		<ul id="sortable2" class="connectedSortable">
+		<ul id="keywords_available" class="connectedSortable">
 			<% @recommendations.each do |item| %>
 				<li class='ui-state-default'><%= item.capitalize %></li>
 			<% end %>	
@@ -25,7 +26,7 @@
 	</div>
 	<div class="span3">		
 		<h5>Blacklisted keywords</h5>
-		<ul id="sortable3" class="connectedSortable">
+		<ul id="keywords_blacklist" class="connectedSortable">
 			<% @search.terms.each do |term| %>
 				<%= "<li id='#{term.id}' class='ui-state-default'>#{term.keyword[1..-1].capitalize}</li>".html_safe if term.keyword[0]=="-" %>
 			<% end %>

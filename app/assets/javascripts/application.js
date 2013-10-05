@@ -43,7 +43,7 @@ $(document).ready(function() {
 });
 
 $(function() {
-	$( "#sortable1, #sortable2, #sortable3" ).sortable({
+	$( "#keywords_in, #keywords_available, #keywords_blacklist" ).sortable({
 		connectWith: ".connectedSortable"
 	}).disableSelection();
 });

@@ -7,3 +7,15 @@ jQuery ->
 		regexp = new RegExp($(this).data('id'), 'g')
 		$(this).before($(this).data('fields').replace(regexp, time))
 		event.preventDefault()
+
+	$('#search_edit_save').on 'click', (event) ->
+		keywords_in = new Array();
+		$('#keywords_in').children().each ->
+			term = $(this).text()
+			keywords_in.push(term)
+		keywords_in_to_db = JSON.stringify(keywords_in)
+		$.ajax
+			url: "update_j"
+			type: "PUT"
+			data: {keywords_in_to_db: keywords_in_to_db}
+		alert(keywords_in_to_db)

@@ -60,6 +60,11 @@ class SearchesController < ApplicationController
     end
   end
 
+  def update_j
+    @terms = JSON.parse(params[:keywords_in_to_db])
+  end
+
+
   def destroy
   	@search.destroy
   	redirect_to(:back)
