@@ -17,6 +17,8 @@ class SearchesController < ApplicationController
     solr = RSolr::Ext.connect url: 'http://localhost:8080/solr/TuneFeeder'
     solrparams = {queries: '*:*', rows: 0, facets: {fields: 'ftext'} }
     
+    @terms = @search.terms
+
     #Build the full list of used keywords from the database
     @keywords = []
     @search.terms.each do |term|
@@ -67,6 +69,6 @@ class SearchesController < ApplicationController
   	def correct_search
   		@search = current_user.searches.find_by_id(params[:id])
   		redirect_to root_path if @search.nil?
-	   end
+	  end
 
 end
