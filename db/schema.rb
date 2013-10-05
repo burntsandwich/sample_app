@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130623113251) do
+ActiveRecord::Schema.define(:version => 20131005113810) do
 
   create_table "query_generators", :force => true do |t|
     t.integer  "search_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130623113251) do
     t.float    "weight"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "search_id"
   end
 
   create_table "users", :force => true do |t|
