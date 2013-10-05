@@ -9,11 +9,11 @@ jQuery ->
 		event.preventDefault()
 
 	$('#search_edit_save').on 'click', (event) ->
-		keywords_in = new Array();
-		$('#keywords_in').children().each ->
+		keywords_in_new = new Array();
+		$('#keywords_in').find('.keyword-available').each ->
 			term = $(this).text()
-			keywords_in.push(term)
-		keywords_in_to_db = JSON.stringify(keywords_in)
+			keywords_in_new.push(term)
+		keywords_in_to_db = JSON.stringify(keywords_in_new)
 		$.ajax
 			url: "update_j"
 			type: "PUT"

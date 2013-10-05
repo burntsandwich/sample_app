@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
 
   before_filter :signed_in_user
-  before_filter :correct_search, only: [:destroy, :edit, :update]
+  before_filter :correct_search, only: [:destroy, :edit, :update, :update_j]
 
   def create
     @search = current_user.searches.build(params[:search])
@@ -45,7 +45,6 @@ class SearchesController < ApplicationController
         end
       end
     end  
-
   end
 
   def update
@@ -61,7 +60,16 @@ class SearchesController < ApplicationController
   end
 
   def update_j
-    @terms = JSON.parse(params[:keywords_in_to_db])
+    #Update terms db with new 'green' terms
+    terms_in = JSON.parse(params[:keywords_in_to_db])
+    terms_in.each do |x|
+      Term.where(search_id: @search, keyword: x).first_or_create(weight: 1)
+    end
+
+    #Update terms db with new blacklisted terms
+
+    #Remove any terms from db that have been dragged out
+    render :nothing => true
   end
 
 
