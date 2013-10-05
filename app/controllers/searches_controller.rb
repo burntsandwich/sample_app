@@ -16,11 +16,34 @@ class SearchesController < ApplicationController
   def edit
     solr = RSolr::Ext.connect url: 'http://localhost:8080/solr/TuneFeeder'
     solrparams = {queries: '*:*', rows: 0, facets: {fields: 'ftext'} }
-    @response = solr.find solrparams
+    
+    #Build the full list of used keywords from the database
+    @keywords = []
+    @search.terms.each do |term|
+      if term.keyword[0] == "-"
+        @keywords << term.keyword[1..-1]
+      else
+        @keywords << term.keyword
+      end
+    end
+
+    #Build a stopword list to filter out words that got through the Solr stopword list
     @stopwords = []
     File.open("#{Rails.root}/config/stopwords_additionalforrails.txt").each do |line|
       @stopwords << line.strip
     end
+
+    #Build a list of recommended keywords, excluding stopwords and keywords that are already in use
+    @recommendations = []
+    @response = solr.find solrparams
+    @response.facets.each do |facet|
+      facet.items.each do |item|
+        if @stopwords.exclude?("#{item.value.to_s.gsub(/\W/, "")}") and @keywords.exclude?("#{item.value.to_s}")
+          @recommendations << item.value
+        end
+      end
+    end  
+
   end
 
   def update

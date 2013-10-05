@@ -18,10 +18,8 @@
 	<div class="span3">
 		<h5>Available keywords</h5>
 		<ul id="sortable2" class="connectedSortable">
-			<% @response.facets.each do |facet| %>
-				<% facet.items.each do |item| %>
-					<%= "<li class='ui-state-default'>#{item.value.capitalize}</li>".html_safe unless @stopwords.include?("#{item.value.to_s.gsub(/\W/, "")}") %>
-				<% end %>
+			<% @recommendations.each do |item| %>
+				<li class='ui-state-default'><%= item.capitalize %></li>
 			<% end %>	
 		</ul>
 	</div>
