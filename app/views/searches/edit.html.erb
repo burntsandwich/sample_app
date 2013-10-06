@@ -18,6 +18,7 @@
 	</div>
 	<div class="span3">
 		<h5>Keywords in search</h5>
+		<input type="text" class="input-small" placeholder="Enter custom term...">
 		<ul id="keywords_in" class="connectedSortable">
 			<% @search.terms.each do |term| %>
 				<%= "<li id='#{term.id}' class='keyword-in ui-state-default'>#{term.keyword.capitalize}</li>".html_safe unless term.keyword[0]=="-" %>

@@ -80,6 +80,11 @@ class SearchesController < ApplicationController
         Term.find_by_id(x).destroy
       end
     end
+
+    @search = current_user.searches.find_by_id(params[:id])
+    terms_to_query(@search.terms)
+    query_cleaner(@query_build)
+    @search.update_attribute(:query, @clean_query)    
     render :nothing => true
   end
 

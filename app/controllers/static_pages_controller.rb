@@ -4,7 +4,8 @@ class StaticPagesController < ApplicationController
 
   def home
   	if signed_in?
-  		@query = "(#{session[:feed_query]}) AND LastMod:[#{session[:feed_timescope]} TO NOW]"
+      query_from_db = current_user.searches.find_by_id(session[:feed_search]).query
+  		@query = "(#{query_from_db}) AND LastMod:[#{session[:feed_timescope]} TO NOW]"
   		solr = RSolr.connect url: 'http://localhost:8080/solr/TuneFeeder'
 		@response = solr.paginate params[:page], 10, 'select', params: {q: @query}
 	end

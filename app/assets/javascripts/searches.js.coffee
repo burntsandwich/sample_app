@@ -36,4 +36,4 @@ jQuery ->
 			type: "PUT"
 			data: {keywords_in_to_db: keywords_in_to_db, keywords_blacklist_to_db: keywords_blacklist_to_db, keywords_bin_to_db: keywords_bin_to_db}
 		
-		alert('Db updated')
+		alert('Search updated')

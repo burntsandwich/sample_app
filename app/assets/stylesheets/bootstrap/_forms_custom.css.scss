@@ -13,6 +13,8 @@ input, textarea, select, .uneditable-input {
 	margin-bottom: 15px;
 	@include box_sizing;
 }
+.input-small {
+	width: 170px;}
 
 #error_explanation {
 	color: #f00;
