@@ -18,7 +18,8 @@
 	</div>
 	<div class="span3">
 		<h5>Keywords in search</h5>
-		<input type="text" class="input-small" placeholder="Enter custom term...">
+		<input id="newterm_available" type="text" class="input-small" placeholder="Enter custom term...">
+		<button id="add_term_available" class="btn btn-small" type="button">Add term</button>
 		<ul id="keywords_in" class="connectedSortable">
 			<% @search.terms.each do |term| %>
 				<%= "<li id='#{term.id}' class='keyword-in ui-state-default'>#{term.keyword.capitalize}</li>".html_safe unless term.keyword[0]=="-" %>
@@ -27,6 +28,8 @@
 	</div>
 	<div class="span3">		
 		<h5>Blacklisted keywords</h5>
+		<input id="newterm_blacklist" type="text" class="input-small" placeholder="Enter custom term...">
+		<button id="add_term_blacklist" class="btn btn-small" type="button">Add term</button>
 		<ul id="keywords_blacklist" class="connectedSortable">
 			<% @search.terms.each do |term| %>
 				<%= "<li id='#{term.id}' class='keyword-blacklisted ui-state-default'>#{term.keyword[1..-1].capitalize}</li>".html_safe if term.keyword[0]=="-" %>

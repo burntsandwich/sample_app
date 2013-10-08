@@ -1,14 +1,25 @@
 <% provide(:title, 'Custom feed') %>
 <% if signed_in? %>
-	<div class="row">
-		<div class='span9'>
-			<div class="page-header">		
-				<h1><%= Search.find_by_id(session[:feed_search]).name %> </h1>
+	<% if session[:feed_search] %>
+		<div class="row">
+			<div class='span9'>
+				<div class="page-header">		
+					<h1><%= @search_name %> </h1>
+				</div>
+				<%= render 'shared/search_results' %>
 			</div>
-			<%= render 'shared/search_results' %>
+			<%= render 'shared/feed_filter' %>
 		</div>
-		<%= render 'shared/feed_filter' %>
-	</div>
+	<% else %>
+		<div class="row">
+			<div class='span9'>
+				<div class="page-header">		
+					<h1>No search set</h1>
+				</div>
+			<p>Please set up a search [give some instructions here...]
+			</div>
+		</div>
+	<% end %>
 <% else %>
 	<div class="center hero-unit">
 		<h1>Welcome to TuneFeeder</h1>
