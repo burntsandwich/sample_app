@@ -13,6 +13,7 @@
  *= require jquery.ui.all
  */
 
+
 #draggable { width: 150px; height: 150px; padding: 0.5em; }
  #keywords_in, #keywords_available, #keywords_blacklist, #keywords_bin { 
  	list-style-type: none; 

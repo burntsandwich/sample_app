@@ -8,6 +8,24 @@ $turquoise: 			#44f4ff;
 $deepred:				#850303;
 $white:                 #fff !default;
 
+// Typography
+// -------------------------
+@font-face	{
+	font: {
+		family: 'Dense';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('dense-regular-webfont.ttf', font) format('truetype');
+}
+
+$baseFontSize:          14px;
+$baseFontFamily:        Open Sans;
+$baseLineHeight:        20px;
+
+$headingsFontFamily:    Dense;
+$headingsFontWeight:    normal;
+
 // Links
 // -------------------------
 $linkColor:             $deepred;

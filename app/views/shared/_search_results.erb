@@ -2,10 +2,10 @@
 	<%= will_paginate @response["response"]["docs"], class: 'pagination pagination-centered' %>
 			<% @response["response"]["docs"].each do |doc| %>
 				<div class="feed-title-row">
-					<p class="feed-title-text"><%= link_to(doc["title"].upcase, doc["baseUrl"])  %></p>
+					<h2 class="feed-title-text"><%= link_to(doc["title"].upcase, doc["baseUrl"])  %></h2>
 				</div>
 				<% @text = @response["highlighting"][doc["baseUrl"]]["text"].first %>
-				<%= @text.html_safe %>
+				<p><%= @text.html_safe %></p>
 			<% end %>
 	<%= will_paginate @response["response"]["docs"], class: 'pagination pagination-centered' %>
 	<p class="muted"><%= @query %></p>
