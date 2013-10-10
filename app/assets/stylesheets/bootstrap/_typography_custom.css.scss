@@ -3,6 +3,62 @@
 @import "bootstrap/mixins";
 @import "bootstrap/type";
 
+/* typography custom fonts */
+
+@font-face	{
+	font: {
+		family: 'Dense';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('dense-regular-webfont.ttf', font) format('truetype');
+}
+
+@font-face {
+	font: {
+		family: 'Novocentowide-light';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('Novecentowide-Light-webfont.woff', font) format('woff')
+}
+
+@font-face {
+	font: {
+		family: 'Novocentowide-demibold';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('Novecentowide-DemiBold-webfont.woff', font) format('woff')
+}
+
+@font-face {
+	font: {
+		family: 'Novocentowide-normal';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('Novecentowide-Normal-webfont.woff', font) format('woff')
+}
+
+@font-face {
+	font: {
+		family: 'Novocentowide-medium';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('Novecentowide-Medium-webfont.woff', font) format('woff')
+}
+
+@font-face {
+	font: {
+		family: 'Novocentowide-book';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('Novecentowide-Book-webfont.woff', font) format('woff')
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -10,16 +66,17 @@ line-height: 1;
 }
 
 h1 {
+	font-family: 'Novocentowide-medium';
 	font-size: 5em;
 	letter-spacing: 0px;
 	margin-bottom: 1px;
 	text-align: left;
-	font-weight: bold;
+	font-weight: normal;
 	line-height: $baseLineHeight;
 }
 
 h2 {
-	font-size: 3.5em;
+	font-size: 2.5em;
 	letter-spacing: 0px;
 	margin-top: 15px;
 	margin-bottom: 5px;
