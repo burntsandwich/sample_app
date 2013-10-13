@@ -1,11 +1,10 @@
 <% if @bang.nil? %>
 	<%= will_paginate @response["response"]["docs"], class: 'pagination pagination-centered' %>
 			<% @response["response"]["docs"].each do |doc| %>
-				<div class="feed-title-row">
-					<h2 class="feed-title-text"><%= link_to(doc["title"].upcase, doc["baseUrl"])  %></h2>
-				</div>
+				<h2><%= link_to(doc["title"].upcase, doc["baseUrl"])  %></h2>
 				<% @text = @response["highlighting"][doc["baseUrl"]]["text"].first %>
 				<p><%= @text.html_safe %></p>
+				<hr>
 			<% end %>
 	<%= will_paginate @response["response"]["docs"], class: 'pagination pagination-centered' %>
 	<p class="muted"><%= @query %></p>

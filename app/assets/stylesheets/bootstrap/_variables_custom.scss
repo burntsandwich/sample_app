@@ -1,12 +1,26 @@
-
+// Grays
+// -------------------------
+$black:                 #000 !default;
+$grayDarker:            #222 !default;
+$grayDark:              #333 !default;
+$gray:                  #555 !default;
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+$white:                 #fff !default;
 
 // Accent colors
 // -------------------------
+$cream:					#f1efd7;
 $yellow:                #ffc700 !default;
 $orange:                #f58330 !default;
 $turquoise: 			#44f4ff;
 $deepred:				#850303;
 $white:                 #fff !default;
+
+// Scaffolding
+// -------------------------
+$bodyBackground:        $grayDark !default;
+$textColor:             $grayLighter !default;
 
 // Typography
 // -------------------------
@@ -17,17 +31,18 @@ $baseLineHeight:        20px;
 
 $headingsFontFamily:    Novocentowide-book;
 $headingsFontWeight:    normal;
+$headingsColor:         $cream;
 
 // Links
 // -------------------------
-$linkColor:             $deepred;
+$linkColor:             $cream;
 
 
 // Navbar
 // -------------------------
 $navbarHeight:                    40px !default;
-$navbarBackground:                $deepred !default;
-$navbarBackgroundHighlight:       $deepred !default;
+$navbarBackground:                $black !default;
+$navbarBackgroundHighlight:       $black !default;
 
 $navbarText:                      $white !default;
 $navbarLinkColor:                 $white !default;
