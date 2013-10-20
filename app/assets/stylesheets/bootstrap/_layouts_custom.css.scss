@@ -6,7 +6,8 @@
 /* container */
 
 .container-fluid {
-	padding-left: 0px;
+	padding-left: 20px;
+	margin: auto;
 	max-width: 1200px;
 }
 
@@ -89,15 +90,18 @@ aside {
   padding: 30px 30px 30px 0px;
 }
 
-@media screen and (min-width: 1200px) {
-	.page-header, .pagination {
-		width: 830px;
-		float: right;
-	}
+.bs-docs-sidebar, .row-sidebar {
+	top: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
 }
 
+.row-sidebar {
+	margin-right: -50px;
+	padding-right: 50px;
+}
 
-.gutterblock {
-	display: inline-block;
-	width: 400px;
+.container-fluid {
+	position: relative;
 }

@@ -2,7 +2,7 @@
 <% if signed_in? %>
 	<% if session[:feed_search] %>
 		<div class="row-fluid">
-			<div class='span10'>
+			<div class='span8'>
 				<div class="row-fluid">
 					<div class="page-header">		
 						<h1><%= @search_name.upcase %> </h1>
@@ -10,8 +10,10 @@
 				</div>
 				<%= render 'shared/search_results' %>
 			</div>
-			<div class='span2 bs-docs-sidebar'>
-				<%= render 'shared/feed_filter' %>
+			<div class='span4 bs-docs-sidebar'>
+				<div class="row-fluid row-sidebar">
+					<%= render 'shared/feed_filter' %>
+				</div>
 			</div>
 		</div>
 	<% else %>
