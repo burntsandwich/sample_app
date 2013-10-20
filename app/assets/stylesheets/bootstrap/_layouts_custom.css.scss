@@ -1,6 +1,15 @@
 @import "bootstrap/variables";
 @import "variables_custom";
 @import "bootstrap/mixins";
+@import "bootstrap/layouts";
+
+/* container */
+
+.container-fluid {
+	padding-left: 0px;
+	max-width: 1200px;
+}
+
 
 /* header */
 
@@ -70,4 +79,25 @@ aside {
 		}
 	}
 
+}
+
+/* layout sizings */
+
+.feed-content {
+  max-width: 800px;
+  float: right;
+  padding: 30px 30px 30px 0px;
+}
+
+@media screen and (min-width: 1200px) {
+	.page-header, .pagination {
+		width: 830px;
+		float: right;
+	}
+}
+
+
+.gutterblock {
+	display: inline-block;
+	width: 400px;
 }

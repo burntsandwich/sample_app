@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300italic);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400italic,400);
 
 // Core variables and mixins
 // @import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
@@ -11,7 +12,7 @@
 // Grid system and page structure
 @import "bootstrap/scaffolding";
 @import "bootstrap/grid";
-@import "bootstrap/layouts";
+// @import "bootstrap/layouts";
 
 // Base CSS
 // @import "bootstrap/type";
@@ -35,7 +36,7 @@
 // @import "bootstrap/navs";
 @import "bootstrap/navbar";
 @import "bootstrap/breadcrumbs";
-@import "bootstrap/pagination";
+// @import "bootstrap/pagination";
 @import "bootstrap/pager";
 
 // Components: Popovers

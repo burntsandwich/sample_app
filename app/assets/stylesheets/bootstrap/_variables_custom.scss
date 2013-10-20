@@ -16,6 +16,7 @@ $orange:                #f58330 !default;
 $turquoise: 			#44f4ff;
 $deepred:				#850303;
 $white:                 #fff !default;
+$midnight:				#1B1B21;
 
 // Scaffolding
 // -------------------------
@@ -26,16 +27,16 @@ $textColor:             $grayLighter !default;
 // -------------------------
 
 $baseFontSize:          14px;
-$baseFontFamily:        Open Sans;
+$baseFontFamily:        'PT Sans';
 $baseLineHeight:        20px;
 
-$headingsFontFamily:    Novocentowide-book;
+$headingsFontFamily:    Novocentowide-normal;
 $headingsFontWeight:    normal;
-$headingsColor:         $cream;
+$headingsColor:         $white;
 
 // Links
 // -------------------------
-$linkColor:             $cream;
+$linkColor:             darken($cream, 10%);
 
 
 // Navbar
@@ -50,9 +51,9 @@ $navbarLinkColorHover:            darken($white, 10%) !default;
 
 // Pagination
 // -------------------------
-$paginationBackground:                lighten($yellow, 15%) !default;
+$paginationBackground:                $gray;
 $paginationBorder:                    $white !default;
-$paginationActiveBackground:          $yellow !default;
+$paginationActiveBackground:          $cream !default;
 
 @import "bootstrap/variables";
 
