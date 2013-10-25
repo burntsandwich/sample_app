@@ -6,7 +6,8 @@
 /* container */
 
 .container-fluid {
-	padding-left: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
 	margin: auto;
 	max-width: 1200px;
 }
@@ -92,16 +93,32 @@ aside {
 
 .bs-docs-sidebar, .row-sidebar {
 	top: 0;
-	bottom: 0;
-	right: 0;
+	bottom: 130px;
+	right: 0px;
 	position: absolute;
 }
 
 .row-sidebar {
-	margin-right: -50px;
-	padding-right: 50px;
+	margin-right: -1000px;
+	padding-right: 1000px;
+	background-color: $grayLight;
+	margin-left: 50px;
+	width: 200px;
 }
 
 .container-fluid {
 	position: relative;
 }
+
+
+.row-light {
+  background-color: $gray;
+  margin-left: -1000px;
+  padding-left: 1000px;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+

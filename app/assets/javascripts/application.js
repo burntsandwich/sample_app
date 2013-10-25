@@ -48,3 +48,4 @@ $(function() {
 		connectWith: ".connectedSortable"
 	}).disableSelection();
 });
+

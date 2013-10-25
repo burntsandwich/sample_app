@@ -1,0 +1,8 @@
+@import "bootstrap/variables";
+@import "variables_custom";
+@import "bootstrap/mixins";
+@import "bootstrap/utilities";
+
+.affix {
+  position: fixed;
+}

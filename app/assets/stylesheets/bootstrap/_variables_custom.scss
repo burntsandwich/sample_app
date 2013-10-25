@@ -55,5 +55,16 @@ $paginationBackground:                $gray;
 $paginationBorder:                    $white !default;
 $paginationActiveBackground:          $cream !default;
 
+// Default 940px grid
+// -------------------------
+$gridGutterWidth:         5px !default;
+
+// 1200px min
+$gridGutterWidth1200:     5px !default;
+
+// 768px-979px
+$gridGutterWidth768:      5px !default;
+
+
 @import "bootstrap/variables";
 
