@@ -1,0 +1,18 @@
+@import "bootstrap/variables";
+@import "variables_custom";
+@import "bootstrap/mixins";
+@import "bootstrap/pagination";
+
+
+/* pagination */
+
+.pagination {
+	margin: 10px 0;
+}
+
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  color: $black;
+  font-weight: bold;
+}
+

@@ -42,11 +42,11 @@ $linkColor:             darken($cream, 10%);
 // Navbar
 // -------------------------
 $navbarHeight:                    40px !default;
-$navbarBackground:                $black !default;
-$navbarBackgroundHighlight:       $black !default;
+$navbarBackground:                $grayDarker !default;
+$navbarBackgroundHighlight:       $grayDarker !default;
 
-$navbarText:                      $white !default;
-$navbarLinkColor:                 $white !default;
+$navbarText:                      $grayLighter !default;
+$navbarLinkColor:                 $grayLighter !default;
 $navbarLinkColorHover:            darken($white, 10%) !default;
 
 // Pagination

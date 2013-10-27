@@ -37,23 +37,6 @@ textarea {
 	max-width: 1200px;
 }
 
-/* header */
-
-#logo {
-	float: left;
-	margin-right: 10px;
-	font-size: 1.7em;
-	color: #fff;
-	text-transform: uppercase;
-	letter-spacing: -1px;
-	padding-top: 9px;
-	font-weight: bold;
-	line-height: 1;
-	&:hover {
-		color: white;
-		text-decoration: none;
-	}
-}
 
 
 /* footer */
@@ -95,8 +78,9 @@ footer {
 .row-sidebar {
 	background-color: $grayDarker;
 	text-align: center;
-	margin-right: -1000px;
-	padding-right: 1000px;
+	margin-top: $fluidGridGutterWidth1200;
+	margin-right: 0px;
+	padding-right: 0px;
 }
 
 .row-sidebar > div {
@@ -106,7 +90,7 @@ footer {
 /* Sidenav (bootstrap) */
 
 .bs-docs-sidenav {
-  width: 200px;
+  width: 260px;
   margin: 30px 0 0px;
   padding: 0;
   list-style: none;
