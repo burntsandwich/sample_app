@@ -10,9 +10,12 @@
 	margin: 10px 0;
 }
 
-.pagination ul > .active > a,
-.pagination ul > .active > span {
-  color: $black;
-  font-weight: bold;
-}
 
+.pagination ul > li > a:hover, 
+.pagination ul > li > a:focus, 
+.pagination ul > .active > a, 
+.pagination ul > .active > span {
+      color: $black;
+	  font-weight: bold;
+	  background-color: $accent3;
+}

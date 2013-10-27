@@ -17,11 +17,30 @@ $turquoise: 			#44f4ff;
 $deepred:				#850303;
 $white:                 #fff !default;
 $midnight:				#1B1B21;
+$greenGrass:			#75F244;
+$yellowCanary:			#FCFA4C;
+$yellowMute:			#E5C251;
+$orangeDusk:			#FCA84C;
+$orangeGlow:			#F26B49;
+
+// Theme colors
+// -------------------------
+$muteDark:				$grayDarker;
+$muteMedium:			$grayDark;
+$muteLight:				$gray;
+$textPrimary:			$grayLighter;
+$textSecondary:			$grayLight;
+$textInverse:			$grayDark;
+$accent1:				$greenGrass;
+$accent2:				$yellowCanary;
+$accent3:				$yellowMute;
+$accent4:				$orangeDusk;
+$accent5:				$orangeGlow;
 
 // Scaffolding
 // -------------------------
-$bodyBackground:        $grayDark !default;
-$textColor:             $grayLighter !default;
+$bodyBackground:        $muteMedium !default;
+$textColor:             $textPrimary !default;
 
 // Typography
 // -------------------------
@@ -32,26 +51,26 @@ $baseLineHeight:        20px;
 
 $headingsFontFamily:    Novocentowide-normal;
 $headingsFontWeight:    normal;
-$headingsColor:         $white;
+$headingsColor:         $accent5;
 
 // Links
 // -------------------------
-$linkColor:             darken($cream, 10%);
+$linkColor:             $accent4;
 
 
 // Navbar
 // -------------------------
 $navbarHeight:                    40px !default;
-$navbarBackground:                $grayDarker !default;
-$navbarBackgroundHighlight:       $grayDarker !default;
+$navbarBackground:                $muteDark !default;
+$navbarBackgroundHighlight:       $muteDark !default;
 
-$navbarText:                      $grayLighter !default;
-$navbarLinkColor:                 $grayLighter !default;
-$navbarLinkColorHover:            darken($white, 10%) !default;
+$navbarText:                      $textPrimary !default;
+$navbarLinkColor:                 $textPrimary !default;
+$navbarLinkColorHover:            lighten($textPrimary, 10%);
 
 // Pagination
 // -------------------------
-$paginationBackground:                $gray;
+$paginationBackground:                $muteLight;
 $paginationBorder:                    $white !default;
 $paginationActiveBackground:          $cream !default;
 

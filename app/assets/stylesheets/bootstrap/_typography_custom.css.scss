@@ -54,7 +54,6 @@
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
-	color: $grayLighter;
 }
 
 h1 {
@@ -74,7 +73,6 @@ h2 {
 	margin-bottom: 5px;
 	text-align: left;
 	font-weight: normal;
-	color: $grayDark;
 }
 
 p {
@@ -89,7 +87,7 @@ li {
 .page-header {
   padding-bottom: 0;
   margin: 20px 0 5px;
-  border-bottom: 2px solid $cream;
+  border-bottom: 2px solid $accent4;
 }
 
 .page-header h1 {
@@ -103,13 +101,13 @@ li {
 	float: left;
 	margin-right: 10px;
 	font-size: 1.7em;
-	color: $grayLight;
+	color: $textSecondary;
 	letter-spacing: 2px;
 	padding-top: 9px;
 	font-weight: normal;
 	line-height: 1;
 	&:hover {
-		color: white;
+		color: lighten($textSecondary, 10%);
 		text-decoration: none;
 	}
 }
