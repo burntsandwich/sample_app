@@ -1,14 +1,13 @@
-
-		<ul class="nav nav-list bs-docs-sidenav affix">
-			<li class='nav-title'>FEED</li>
-			<% current_user.searches.each do |s| %>
-				<li>
-				<%= link_to "#{s.name}", set_feed_search_path(feed_search: s) %>
-				</li>
-			<% end %>
-			<li class='nav-title'>TIME PERIOD</li>
-			<li><%= link_to "Today", set_feed_timescope_path(feed_timescope: "NOW-1DAY") %></li>
-			<li><%= link_to "Last two days", set_feed_timescope_path(feed_timescope: "NOW-2DAYS") %></li>
-			<li><%= link_to "Last week", set_feed_timescope_path(feed_timescope: "NOW-7DAYS") %></li>
-			<li><%= link_to "All of time", set_feed_timescope_path(feed_timescope: "NOW-5YEARS")%></li>
-		</ul>
+<ul class="nav nav-list bs-docs-sidenav">
+	<li class='nav-title'>FEED</li>
+	<% current_user.searches.each do |s| %>
+		<li>
+		<%= link_to "#{s.name}", set_feed_search_path(feed_search: s) %>
+		</li>
+	<% end %>
+	<li class='nav-title'>TIME PERIOD</li>
+	<li><%= link_to "Today", set_feed_timescope_path(feed_timescope: "NOW-1DAY") %></li>
+	<li><%= link_to "Last two days", set_feed_timescope_path(feed_timescope: "NOW-2DAYS") %></li>
+	<li><%= link_to "Last week", set_feed_timescope_path(feed_timescope: "NOW-7DAYS") %></li>
+	<li><%= link_to "All of time", set_feed_timescope_path(feed_timescope: "NOW-5YEARS")%></li>
+</ul>
