@@ -2,12 +2,13 @@
 	<li class='nav-title'>FEED</li>
 	<% current_user.searches.each do |s| %>
 		<li>
-		<%= link_to "#{s.name}", set_feed_search_path(feed_search: s) %>
+			<div class='feed-item'>
+				<%= link_to "#{s.name}", set_feed_search_path(feed_search: s), class: 'feed-select-search' %> <%= link_to 'Edit', edit_search_path(s), class: 'edit-search-link' %></div>
 		</li>
 	<% end %>
 	<li class='nav-title'>TIME PERIOD</li>
-	<li><%= link_to "Today", set_feed_timescope_path(feed_timescope: "NOW-1DAY") %></li>
-	<li><%= link_to "Last two days", set_feed_timescope_path(feed_timescope: "NOW-2DAYS") %></li>
-	<li><%= link_to "Last week", set_feed_timescope_path(feed_timescope: "NOW-7DAYS") %></li>
-	<li><%= link_to "All of time", set_feed_timescope_path(feed_timescope: "NOW-5YEARS")%></li>
+	<li><%= link_to "Today", set_feed_timescope_path(feed_timescope: "NOW-1DAY"), class: 'feed-select-time'%> </li>
+	<li><%= link_to "Last two days", set_feed_timescope_path(feed_timescope: "NOW-2DAYS"), class: 'feed-select-time' %></li>
+	<li><%= link_to "Last week", set_feed_timescope_path(feed_timescope: "NOW-7DAYS"), class: 'feed-select-time' %></li>
+	<li><%= link_to "All of time", set_feed_timescope_path(feed_timescope: "NOW-5YEARS"), class: 'feed-select-time' %></li>
 </ul>

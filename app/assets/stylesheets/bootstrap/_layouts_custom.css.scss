@@ -107,31 +107,61 @@ footer {
 
 
 
-.bs-docs-sidenav > li > a:hover,
-.bs-docs-sidenav > li > a:active {
-    text-decoration: none;
-    background-color: $accent3;
-    color: $textInverse;
-}
-
 .bs-docs-sidenav > li {
   display: block;
   width: 190px \9;
   margin: 0 0 -1px;
   padding: 5px 16px;
   border: 1px solid $black;
+  position: relative;
+  clear: both;
+
+  &:hover {
+    background-color: $accent1;
+    color: $textInverse;
+  }
 
   &.nav-title {
-    color: $textPrimary;
+    color: $accent5;
     padding: 14px 16px 5px;
-    font-weight: bold;
+    font-family: 'Novocentowide-book';
+    font-style: normal;
+    font-size: 1.2em;
   }
 
-  a {
-    color: $textPrimary;
-    font-style: italic;
-  }
 }
+
+.bs-docs-sidenav > li > a:hover,
+.bs-docs-sidenav > li > a:active {
+    text-decoration: none;
+    background-color: $accent1;
+    color: $textInverse;
+}
+
+.feed-item {
+  display: table;
+  width: 100%;
+}
+
+.edit-search-link {
+  display: table-cell;
+  width: 20%;
+  text-align: right;
+}
+
+.feed-select-search {
+    display: table-cell;
+    width: 80%;
+    text-align: left;
+    font-style: italic;
+}
+
+.edit-search-link:hover,
+.feed-select-search:hover {
+    color: $textInverse;
+    text-decoration: none;
+}
+
 
 .bs-docs-sidenav > li:first-child {
   -webkit-border-radius: 6px 6px 0 0;
@@ -143,6 +173,7 @@ footer {
      -moz-border-radius: 0 0 6px 6px;
           border-radius: 0 0 6px 6px;
 }
+
 .bs-docs-sidenav > .active > a {
   position: relative;
   z-index: 2;
@@ -153,6 +184,7 @@ footer {
      -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
           box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
 }
+
 
 .bs-docs-sidenav.affix {
   top: 40px;
