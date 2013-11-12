@@ -1,6 +1,7 @@
 @import "bootstrap/variables";
 @import "variables_custom";
 @import "bootstrap/mixins";
+@import 'mixins_custom';
 @import "bootstrap/layouts";
 @import "bootstrap/navs";
 
@@ -117,7 +118,7 @@ footer {
   clear: both;
 
   &:hover {
-    background-color: $accent1;
+    background-color: $accent2;
     color: $textInverse;
   }
 
@@ -127,16 +128,13 @@ footer {
     font-family: 'Novocentowide-book';
     font-style: normal;
     font-size: 1.2em;
+      &:hover {
+       background-color: none;
+    }
   }
 
 }
 
-.bs-docs-sidenav > li > a:hover,
-.bs-docs-sidenav > li > a:active {
-    text-decoration: none;
-    background-color: $accent1;
-    color: $textInverse;
-}
 
 .feed-item {
   display: table;
@@ -198,7 +196,40 @@ footer {
 
 .nav-list > li > a, .nav-list .nav-header {
     text-shadow: none;
+    &:hover{
+      background-color: inherit;
+      color: $textInverse;
+    }
+
 }
 
 
+/*Edit page*/
 
+#draggable { width: 150px; height: 150px; padding: 0.5em; }
+ #keywords_in, #keywords_available, #keywords_blacklist, #keywords_bin { 
+  list-style-type: none; 
+  margin: 0; 
+  float: left; 
+  margin-right: 10px; 
+  background: $muteDark; 
+  padding: 5px; 
+  width: 170px;}
+#keywords_in li, #keywords_available li, #keywords_blacklist li, #keywords_bin li { margin: 5px; padding: 5px; font-size: 1.0em; width: 150px; }
+
+#droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+
+.keyword-in,
+.keyword-available, 
+.keyword-blacklisted {
+  background-color: $muteLight;
+}
+
+.input-wbtn {
+  width: 60%;
+}
+
+.input-btn {
+  width: 20%;
+  padding: 0;
+}

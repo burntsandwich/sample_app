@@ -57,6 +57,21 @@ $headingsColor:         $accent5;
 // -------------------------
 $linkColor:             $accent4;
 
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+$baseBorderRadius:      1px !default;
+$borderRadiusLarge:     2px !default;
+$borderRadiusSmall:     1px !default;
+
+// Buttons
+// -------------------------
+$btnBackground:                     $accent2;
+$btnBackgroundHighlight:            $accent2;
+$btnBorder:                         $accent2 !default;
+
+$btnPrimaryBackground:              $accent2;
+$btnPrimaryBackgroundHighlight:     $accent2;
 
 // Navbar
 // -------------------------

@@ -101,13 +101,13 @@ li {
 	float: left;
 	margin-right: 10px;
 	font-size: 1.7em;
-	color: $textSecondary;
+	color: $accent3;
 	letter-spacing: 2px;
 	padding-top: 9px;
 	font-weight: normal;
 	line-height: 1;
 	&:hover {
-		color: lighten($textSecondary, 10%);
+		color: darken($accent3, 20%);
 		text-decoration: none;
 	}
 }
