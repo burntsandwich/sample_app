@@ -60,11 +60,16 @@ class SearchesController < ApplicationController
   end
 
   def update_j
-    #Update terms db with new 'green' terms
+    #Parse the JSON objects
+    search_name_in = JSON.parse(params[:search_name_to_db])
     terms_in = JSON.parse(params[:keywords_in_to_db])
     terms_blacklist = JSON.parse(params[:keywords_blacklist_to_db])
     terms_out = JSON.parse(params[:keywords_bin_to_db])
 
+    #Update search model with new search name
+    @search.update_attribute(:name, search_name_in.first)
+
+    #Update terms db with new available terms
     terms_in.each do |x|
       Term.where(search_id: @search, keyword: x).first_or_create(weight: 1)
     end
@@ -84,8 +89,7 @@ class SearchesController < ApplicationController
     @search = current_user.searches.find_by_id(params[:id])
     terms_to_query(@search.terms)
     query_cleaner(@query_build)
-    @search.update_attribute(:query, @clean_query)    
-    render :nothing => true
+    @search.update_attribute(:query, @clean_query)
   end
 
 

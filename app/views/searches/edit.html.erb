@@ -3,12 +3,14 @@
 	<div class="span9">	
 		<div class="row-fluid">
 			<div class="page-header">
-				<h1>Update your search</h1>
+				<h1>Edit search</h1>
 			</div>
 		</div>
 		<div class="row-fluid">
 			<div class="span6">
-				<h3>Search: <%= @search.name %></h3>
+				<%= form_for @search, url: {action: 'edit'}, html: {id: "search-name"} do |f| %>
+					<%= f.text_field :name %>
+				<% end %>
 			</div>
 			<div class="span6">
 				<button id="search_edit_save" class="btn btn-block">Update search</button>

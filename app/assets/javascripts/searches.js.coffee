@@ -10,15 +10,21 @@ jQuery ->
 
 	#Handles the 'update search' button
 	$('#search_edit_save').on 'click', (event) ->
+		search_name = new Array();
 		keywords_in_new = new Array();
 		keywords_blacklist_new = new Array()
 		keywords_bin_new = new Array()
+
+		#Find the search name
+		search_name.push($('#search_name').val())
+		search_name_to_db = JSON.stringify(search_name)
 
 		#Find keywords that have been dragged into the 'keywords-in' block
 		$('#keywords_in').find('.keyword-available, .keyword-blacklisted, .keyword-custom').each ->
 			term = $(this).text()
 			keywords_in_new.push(term)
 		keywords_in_to_db = JSON.stringify(keywords_in_new)
+
 
 		#Find keywords that have been dragged into the 'keywords-blacklist' block
 		$('#keywords_blacklist').find('.keyword-available, .keyword-in, .keyword-custom').each ->
@@ -35,9 +41,9 @@ jQuery ->
 		$.ajax
 			url: "update_j"
 			type: "PUT"
-			data: {keywords_in_to_db: keywords_in_to_db, keywords_blacklist_to_db: keywords_blacklist_to_db, keywords_bin_to_db: keywords_bin_to_db}
+			data: {search_name_to_db: search_name_to_db, keywords_in_to_db: keywords_in_to_db, keywords_blacklist_to_db: keywords_blacklist_to_db, keywords_bin_to_db: keywords_bin_to_db}
 		
-		alert("Search updated")
+		alert( "Search updated" )
 
 	#Take terms entered into the custom input field and put them into keywords_available
 	$('#add_term_available').on 'click', (event) ->
